@@ -1,0 +1,8 @@
+{
+    "/api/*": {
+        "target": "https://positive-vibrancy-production.up.railway.app",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+}

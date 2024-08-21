@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+h1 {
+    margin: 0 !important;
+}
+
+.error {
+    color: red;
+}
+// Importer les thèmes et palettes Angular Material
+@import '~@angular/material/theming';
+
+// Créer une palette personnalisée avec votre couleur
+$my-primary: mat-palette($mat-teal, 600); // 600 correspond à la couleur #009688
+
+// Définir les palettes secondaires et d'avertissement (vous pouvez personnaliser cela aussi)
+$my-accent: mat-palette($mat-pink, A200);
+$my-warn: mat-palette($mat-red);
+
+// Créer un thème global en combinant les palettes
+$my-app-theme: mat-light-theme((
+  color: (
+    primary: $my-primary,
+    accent: $my-accent,
+    warn: $my-warn,
+  )
+));
+
+// Appliquer le thème à l'application
+@include angular-material-theme($my-app-theme);
