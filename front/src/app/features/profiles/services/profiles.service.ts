@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Profile } from 'src/app/features/profiles/interfaces/profile.interface';
 import { ProfileResponse } from '../interfaces/api/profileResponse.interface';
 import { ProfilesResponse } from '../interfaces/api/profilesResponse.interface';
+import { environment } from '../../../../environments/environment.prod'; 
 
 
 @Injectable({
@@ -11,7 +12,7 @@ import { ProfilesResponse } from '../interfaces/api/profilesResponse.interface';
 })
 export class ProfilesService {
 
-  private pathService = 'api/profiles';
+  private pathService = `${environment.baseUrl}/profiles`;
 
   constructor(private httpClient: HttpClient) { }
 
