@@ -29,7 +29,7 @@ Download Mockoon here: https://mockoon.com/download/
 
 After installing you could load the environement
 
-> ressources/mockoon/rental-oc.json
+> ressources/mockoon/profile-oc.json
 
 directly inside Mockoon 
 
@@ -43,7 +43,7 @@ Mockoon documentation: https://mockoon.com/docs/latest/about/
 
 For Postman import the collection
 
-> ressources/postman/rental.postman_collection.json 
+> ressources/postman/profile.postman_collection.json 
 
 by following the documentation: 
 

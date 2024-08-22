@@ -21,7 +21,7 @@ CREATE TABLE `RENTALS` (
 
 CREATE TABLE `MESSAGES` (
   `id` integer PRIMARY KEY AUTO_INCREMENT,
-  `rental_id` integer,
+  `profile_id` integer,
   `user_id` integer,
   `message` varchar(2000),
   `created_at` timestamp,
@@ -34,4 +34,4 @@ ALTER TABLE `USERS` ADD FOREIGN KEY (`id`) REFERENCES `RENTALS` (`owner_id`);
 
 ALTER TABLE `USERS` ADD FOREIGN KEY (`id`) REFERENCES `MESSAGES` (`user_id`);
 
-ALTER TABLE `RENTALS` ADD FOREIGN KEY (`id`) REFERENCES `MESSAGES` (`rental_id`);
+ALTER TABLE `RENTALS` ADD FOREIGN KEY (`id`) REFERENCES `MESSAGES` (`profile_id`);

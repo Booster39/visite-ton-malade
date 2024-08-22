@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "e2d2a80a-c3b8-456e-97ca-80aea313dfe7",
-		"name": "rental",
+		"name": "profile",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "1183177"
 	},
@@ -100,7 +100,7 @@
 			]
 		},
 		{
-			"name": "rentals",
+			"name": "profiles",
 			"item": [
 				{
 					"name": "get All",
@@ -108,14 +108,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3001/api/rentals",
+							"raw": "localhost:3001/api/profiles",
 							"host": [
 								"localhost"
 							],
 							"port": "3001",
 							"path": [
 								"api",
-								"rentals"
+								"profiles"
 							]
 						}
 					},
@@ -127,14 +127,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3001/api/rentals/1",
+							"raw": "localhost:3001/api/profiles/1",
 							"host": [
 								"localhost"
 							],
 							"port": "3001",
 							"path": [
 								"api",
-								"rentals",
+								"profiles",
 								"1"
 							]
 						}
@@ -177,14 +177,14 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3001/api/rentals/1",
+							"raw": "localhost:3001/api/profiles/1",
 							"host": [
 								"localhost"
 							],
 							"port": "3001",
 							"path": [
 								"api",
-								"rentals",
+								"profiles",
 								"1"
 							]
 						}
@@ -222,14 +222,14 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3001/api/rentals/1",
+							"raw": "localhost:3001/api/profiles/1",
 							"host": [
 								"localhost"
 							],
 							"port": "3001",
 							"path": [
 								"api",
-								"rentals",
+								"profiles",
 								"1"
 							]
 						}
@@ -248,7 +248,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"message\": \"mon message\",\n    \"user_id\": 1,\n    \"rental_id\": 1\n}",
+							"raw": "{\n    \"message\": \"mon message\",\n    \"user_id\": 1,\n    \"profile_id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
