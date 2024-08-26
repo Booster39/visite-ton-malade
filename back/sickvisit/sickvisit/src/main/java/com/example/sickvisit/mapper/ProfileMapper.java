@@ -27,8 +27,8 @@ public class ProfileMapper implements EntityMapper<ProfileDto, Profile> {
 
     profile.id( dto.getId() );
     profile.name( dto.getName() );
-    profile.surface( dto.getSurface() );
-    profile.price( dto.getPrice() );
+    profile.age( dto.getAge() );
+    profile.city( dto.getCity() );
     profile.picture( dto.getPicture() );
     profile.description( dto.getDescription() );
     profile.created_at(dto.getCreated_at());
@@ -50,8 +50,8 @@ public class ProfileMapper implements EntityMapper<ProfileDto, Profile> {
 
     profileDto.setId( entity.getId() );
     profileDto.setName( entity.getName() );
-    profileDto.setSurface( entity.getSurface() );
-    profileDto.setPrice( entity.getPrice() );
+    profileDto.setAge( entity.getAge() );
+    profileDto.setCity( entity.getCity() );
     profileDto.setPicture( entity.getPicture() );
     profileDto.setDescription( entity.getDescription() );
     profileDto.setOwner_id(entity.getOwner().getId());

@@ -24,10 +24,10 @@ public class ProfileDto {
   private String name;
 
   @Schema(description = "Surface de la location en mètres carrés", example = "45.0")
-  private float surface;
+  private Long age;
 
   @Schema(description = "Prix de la location par mois", example = "1200.0")
-  private float price;
+  private String city;
 
   @Schema(description = "Chemin de l'image de la location", example = "/images/appartement_paris.jpg")
   @NonNull

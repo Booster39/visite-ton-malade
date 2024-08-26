@@ -108,8 +108,8 @@ public class ProfileController {
   public ResponseEntity<StringResponse> create(
           @RequestPart("picture") MultipartFile multipartFile,
           @RequestParam("name") @NotBlank @Size(max = 63) String name,
-          @RequestParam("surface") @Min(0) float surface,
-          @RequestParam("price") @Min(0) float price,
+          @RequestParam("age") @Min(0) Long age,
+          @RequestParam("city") @Size(max = 2000) String city,
             @RequestParam("description") @Size(max = 2000) String description,
             @RequestHeader(value = "Authorization", required = false) String jwt
   ) {
@@ -118,7 +118,7 @@ public class ProfileController {
       User owner = this.userRepository.findByEmail(username)
               .orElseThrow(() -> new RuntimeException("User not found"));
       String picturePath = fileStorageService.savePicture(multipartFile);
-      Profile profile = profileService.create(name, surface, price, description, picturePath, owner);
+      Profile profile = profileService.create(name, age, city, description, picturePath, owner);
       return ResponseEntity.ok().body(new StringResponse("Profile created !"));
     } catch (Exception e) {
       return ResponseEntity.badRequest().build();
@@ -138,8 +138,8 @@ public class ProfileController {
   public ResponseEntity<?> update(
           @PathVariable("id") String id,
           @RequestParam("name") @NotBlank @Size(max = 63) String name,
-          @RequestParam("surface") @Min(0) float surface,
-          @RequestParam("price") @Min(0) float price,
+          @RequestParam("age") @Min(0) Long age,
+          @RequestParam("city") @Size(max = 2000) String city,
           @RequestParam("description") @Size(max = 2000) String description,
           @RequestHeader(value = "Authorization", required = false) String jwt
   ) {
@@ -148,7 +148,7 @@ public class ProfileController {
       User owner = this.userRepository.findByEmail(username)
               .orElseThrow(() -> new RuntimeException("User not found"));
 
-      Profile profile = profileService.update(Long.parseLong(id), name, surface, price, description, owner);
+      Profile profile = profileService.update(Long.parseLong(id), name, age, city, description, owner);
       return ResponseEntity.ok().body(new StringResponse("Profile updated !"));
     } catch (Exception e) {
       return ResponseEntity.badRequest().build();

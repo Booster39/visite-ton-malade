@@ -7,6 +7,8 @@ import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
@@ -31,9 +33,9 @@ public class Profile {
     @Size(max = 255)
     private String name;
 
-    private float surface;
+    private Long age;
 
-    private float price;
+  private String city;
 
     @NonNull
     private String picture;
