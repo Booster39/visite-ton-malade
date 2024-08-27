@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
+import {MatGridListModule} from '@angular/material/grid-list';
 registerLocaleData(localeFr);
 
 const materialModules = [
@@ -24,7 +25,8 @@ const materialModules = [
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatGridListModule
 ];
 
 @NgModule({

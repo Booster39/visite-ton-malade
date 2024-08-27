@@ -7,19 +7,19 @@
                 <span class="ml1">Create</span>
             </button>
         </mat-card-header>
-        <div class="items mt2" fxLayout="row" fxLayout.lt-md="column">
-            <mat-card class="item" *ngFor="let profile of (profiles$ | async)?.profiles" fxFlex>
+        <div class="items mt2" fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="2rem">
+            <mat-card class="item" *ngFor="let profile of (profiles$ | async)?.profiles" fxFlex="46">
                 <mat-card-header>
                     <mat-card-title>{{ profile.name }}</mat-card-title>
                     <mat-card-subtitle>
                         <!--<app-owner-info [ownerId]="profile.owner_id"></app-owner-info>-->
                     </mat-card-subtitle>
                 </mat-card-header>
-                <img mat-card-image [src]="profile.picture" alt="Profile picture">
                 <mat-card-content>
-                    <p>
-                        {{ profile.description }}
-                    </p>
+                    <img mat-card-image class="fit" [src]="profile.picture" alt="Profile picture">
+                </mat-card-content>
+                <mat-card-content>
+                    <p>{{ profile.description }}</p>
                 </mat-card-content>
                 <mat-card-actions>
                     <button mat-raised-button color="primary" [routerLink]="['detail',profile.id]">

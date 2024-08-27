@@ -26,8 +26,8 @@
                 </div>
             </div>
             <div class="description">
-                <p>Description:</p>
-                {{ profile.description }}
+                <p>Description :
+                {{ profile.description }}</p>
             </div>
             <div class="date" class="my2" fxLayout="row" fxLayoutAlign="space-between center">
                 <div class="created"><i>Create at: </i> {{ profile.created_at| date: 'longDate'}}</div>
@@ -41,12 +41,19 @@
             <h2>Contact the owner</h2>
         </mat-card-title>
         <mat-card-content>
+
+            
+
             <form [formGroup]="messageForm" (ngSubmit)="sendMessage()" fxLayout="column">
-                <textarea matInput placeholder="Message for the owner" rows="6" formControlName="message"></textarea>
-                <div fxLayout="row" fxLayoutAlign="end center" class="mt2">
-                    <button mat-raised-button color="primary" type="submit"
-                        [disabled]="messageForm.invalid">Send</button>
-                </div>
+                <mat-form-field appearance="outline" fxFlex>
+                    <mat-label>Description</mat-label>
+                    <mat-icon matSuffix>message</mat-icon>
+                    <textarea matInput placeholder="Message for the owner" rows="6" formControlName="message"></textarea>
+                    <div fxLayout="row" fxLayoutAlign="end center" class="mt2">
+                        <button mat-raised-button color="primary" type="submit"
+                            [disabled]="messageForm.invalid">Send</button>
+                    </div>
+                </mat-form-field>
             </form>
         </mat-card-content>
     </mat-card>

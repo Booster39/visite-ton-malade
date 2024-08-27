@@ -1,7 +1,26 @@
 .list {
     margin: 20px;
+}
 
-    .items {
-        gap: 2rem;
-    }
+.items {
+    gap: 2rem;
+}
+
+.item {
+    width: 100%; /* Ensures full width within the fxFlex */
+    height: 475px;
+}
+
+.fit {
+    margin: 0;
+    height: 320px;
+}
+
+mat-card-actions {
+    margin: 0;
+    padding: 0;
+}
+
+mat-card-title {
+    padding-bottom: 20px;
 }
