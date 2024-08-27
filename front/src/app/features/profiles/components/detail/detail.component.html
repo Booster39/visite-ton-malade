@@ -6,7 +6,6 @@
                     <button mat-icon-button (click)="back()">
                         <mat-icon>arrow_back</mat-icon>
                     </button>
-                    <h1>{{profile.name | titlecase}}</h1>
                 </div>
             </div>
             <mat-card-subtitle class="owner">
@@ -15,25 +14,26 @@
         </mat-card-title>
         <mat-card-content>
             <div fxLayout="column" fxLayoutAlign="start center">
+                <h1 class="profilename">{{profile.name | titlecase}}</h1>
                 <img class="fit" [src]="profile.picture" alt="house picture">
             </div>
-            <div class="my2" fxLayout="row" fxLayoutAlign="space-between center">
-                <div fxLayout="center">
-                    <span class="ml1">Age : {{ profile.age}} ans</span>
+            <div class="my2" fxLayout="row" fxLayoutAlign="center center">
+                <div class="room" fxLayout="column" fxLayoutAlign="center center"> 
+                    <span class="ml1">AGE : {{ (profile.age + " ans").toUpperCase()}} </span>
                 </div>
                 
-                <div class="room" fxLayout="row" fxLayoutAlign="center center"> 
+                <div class="room" fxLayout="column" fxLayoutAlign="center center"> 
                     <mat-icon matPrefix>room</mat-icon>
-                    <span >Ville : {{ profile.city }}</span>
+                    <span >VILLE : {{ profile.city.toUpperCase() }}</span>
                 </div>
                 
             
             </div>
-            <div class="description">
+            <div class="description" fxLayout="column"  fxLayoutAlign="center center">
                 <p>Description :
                 {{ profile.description }}</p>
             </div>
-            <div class="date" class="my2" fxLayout="row" fxLayoutAlign="space-between center">
+            <div class="date" class="my2" fxLayout="column" fxLayoutAlign="center center">
                 <div class="created"><i>Create at: </i> {{ profile.created_at| date: 'longDate'}}</div>
                 <div class="updated"><i>Last update: </i> {{ profile.updated_at| date: 'longDate'}}</div>
             </div>
