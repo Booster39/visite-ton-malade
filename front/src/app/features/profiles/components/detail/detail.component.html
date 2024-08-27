@@ -21,9 +21,13 @@
                 <div fxLayout="center">
                     <span class="ml1">Age : {{ profile.age}} ans</span>
                 </div>
-                <div fxLayout="center"> 
-                    <span class="ml1">Ville : {{ profile.city}}</span>
+                
+                <div class="room" fxLayout="row" fxLayoutAlign="center center"> 
+                    <mat-icon matPrefix>room</mat-icon>
+                    <span >Ville : {{ profile.city }}</span>
                 </div>
+                
+            
             </div>
             <div class="description">
                 <p>Description :
