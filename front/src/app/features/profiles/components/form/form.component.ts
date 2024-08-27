@@ -43,10 +43,14 @@ export class FormComponent implements OnInit {
   }
 
   public submit(): void {
+    if (this.profileForm?.invalid) {
+      this.matSnackBar.open("Please fill in all required fields", "Close", { duration: 3000 });
+      return;
+  }
     const formData = new FormData();
     formData.append('name', this.profileForm!.get('name')?.value);
-    formData.append('surface', this.profileForm!.get('surface')?.value);
-    formData.append('price', this.profileForm!.get('price')?.value);
+    formData.append('age', this.profileForm!.get('age')?.value);
+    formData.append('city', this.profileForm!.get('city')?.value);
     if (!this.onUpdate) {
       formData.append('picture', this.profileForm!.get('picture')?.value._files[0]);
     }
@@ -71,8 +75,8 @@ export class FormComponent implements OnInit {
     }
     this.profileForm = this.fb.group({
       name: [profile ? profile.name : '', [Validators.required]],
-      surface: [profile ? profile.surface : '', [Validators.required]],
-      price: [profile ? profile.price : '', [Validators.required]],
+      age: [profile ? profile.age : '', [Validators.required]],
+      city: [profile ? profile.city : '', [Validators.required]],
       description: [profile ? profile.description : '', [Validators.required]],
     });
     if (!this.onUpdate) {

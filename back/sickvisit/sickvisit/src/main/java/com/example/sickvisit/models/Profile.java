@@ -34,7 +34,9 @@ public class Profile {
     private String name;
 
     private Long age;
-
+    
+    @NonNull
+    @Size(max = 255)
   private String city;
 
     @NonNull

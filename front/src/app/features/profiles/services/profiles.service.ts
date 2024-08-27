@@ -12,7 +12,7 @@ import { environment } from '../../../../environments/environment.prod';
 })
 export class ProfilesService {
 
-  private pathService = `/api/profiles`;
+  private pathService = `${environment.baseUrl}/api/profiles`;
 
   constructor(private httpClient: HttpClient) { }
 

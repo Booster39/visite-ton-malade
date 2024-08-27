@@ -1,8 +1,8 @@
 export interface Profile {
 	id: number,
 	name: string,
-	surface: number,
-	price: number,
+	age: number,
+	city: string,
 	picture: string,
 	description: string,
 	owner_id: number,

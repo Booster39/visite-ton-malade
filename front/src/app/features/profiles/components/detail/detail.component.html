@@ -19,16 +19,10 @@
             </div>
             <div class="my2" fxLayout="row" fxLayoutAlign="space-between center">
                 <div fxLayout="center">
-                    <mat-icon>
-                        straighten
-                    </mat-icon>
-                    <span class="ml1">{{ profile.surface}} m2</span>
+                    <span class="ml1">Age : {{ profile.age}} ans</span>
                 </div>
-                <div fxLayout="center">
-                    <mat-icon>
-                        nights_stay
-                    </mat-icon>
-                    <span class="ml1">{{ profile.price | currency:'EUR':'symbol':'.2-2'}} / by night</span>
+                <div fxLayout="center"> 
+                    <span class="ml1">Ville : {{ profile.city}}</span>
                 </div>
             </div>
             <div class="description">
