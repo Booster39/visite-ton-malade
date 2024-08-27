@@ -10,10 +10,14 @@
     width: 100%; /* Ensures full width within the fxFlex */
     height: 475px;
 }
-
+.item mat-card-content {
+    border-radius: 7px;
+    overflow: hidden; /* Assurez-vous que l'image ne dépasse pas du conteneur arrondi */
+}
 .fit {
     margin: 0;
     height: 320px;
+    border-radius: 7px;
 }
 
 mat-card-actions {
