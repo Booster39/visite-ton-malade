@@ -41,10 +41,10 @@ public class ProfileDto {
   @Schema(description = "ID de l'utilisateur", example = "1")
   private Long owner_id;
 
-  @Schema(description = "Date de création de l'utilisateur", example = "01 January 2020")
-  private LocalDateTime created_at;
+  //@Schema(description = "Date de création de l'utilisateur", example = "01 January 2020")
+  //private LocalDateTime created_at;
 
-  @Schema(description = "Date de modification de l'utilisateur", example = "02 January 2020")
-  private LocalDateTime updated_at;
+ // @Schema(description = "Date de modification de l'utilisateur", example = "02 January 2020")
+  //private LocalDateTime updated_at;
 
 }

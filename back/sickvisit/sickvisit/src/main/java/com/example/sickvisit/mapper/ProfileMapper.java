@@ -31,8 +31,8 @@ public class ProfileMapper implements EntityMapper<ProfileDto, Profile> {
     profile.city( dto.getCity() );
     profile.picture( dto.getPicture() );
     profile.description( dto.getDescription() );
-    profile.created_at(dto.getCreated_at());
-    profile.updated_at(dto.getUpdated_at());
+    /*profile.created_at(dto.getCreated_at());
+    profile.updated_at(dto.getUpdated_at());*/
 
     User owner = userRepository.findById(dto.getOwner_id()).orElse(null);
     profile.owner(owner);
@@ -55,8 +55,8 @@ public class ProfileMapper implements EntityMapper<ProfileDto, Profile> {
     profileDto.setPicture( entity.getPicture() );
     profileDto.setDescription( entity.getDescription() );
     profileDto.setOwner_id(entity.getOwner().getId());
-    profileDto.setCreated_at(entity.getCreated_at());
-    profileDto.setUpdated_at(entity.getUpdated_at());
+   /* profileDto.setCreated_at(entity.getCreated_at());
+    profileDto.setUpdated_at(entity.getUpdated_at());*/
 
 
 

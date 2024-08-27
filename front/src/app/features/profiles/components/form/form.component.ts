@@ -43,10 +43,6 @@ export class FormComponent implements OnInit {
   }
 
   public submit(): void {
-    if (this.profileForm?.invalid) {
-      this.matSnackBar.open("Please fill in all required fields", "Close", { duration: 3000 });
-      return;
-  }
     const formData = new FormData();
     formData.append('name', this.profileForm!.get('name')?.value);
     formData.append('age', this.profileForm!.get('age')?.value);

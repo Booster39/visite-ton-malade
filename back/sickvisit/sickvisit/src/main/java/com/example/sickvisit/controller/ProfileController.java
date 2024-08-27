@@ -121,7 +121,7 @@ public class ProfileController {
       Profile profile = profileService.create(name, age, city, description, picturePath, owner);
       return ResponseEntity.ok().body(new StringResponse("Profile created !"));
     } catch (Exception e) {
-      return ResponseEntity.badRequest().build();
+      return ResponseEntity.badRequest().body(new StringResponse("Error: Invalid request"));
     }
   }
 
@@ -151,7 +151,7 @@ public class ProfileController {
       Profile profile = profileService.update(Long.parseLong(id), name, age, city, description, owner);
       return ResponseEntity.ok().body(new StringResponse("Profile updated !"));
     } catch (Exception e) {
-      return ResponseEntity.badRequest().build();
-    }
+      return ResponseEntity.badRequest().body(new StringResponse("Error: Invalid request"));
+        }
   }
 }

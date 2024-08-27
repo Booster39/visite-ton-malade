@@ -50,11 +50,11 @@ public class Profile {
     @JoinColumn(name = "owner_id", referencedColumnName = "id", nullable = false)
     private User owner;
 
-    @CreatedDate
+    /*@CreatedDate
     @Column(name = "created_at", updatable = false)
     private LocalDateTime created_at;
 
     @UpdateTimestamp
     @Column(name = "updated_at", length = 8)
-    private LocalDateTime updated_at;
+    private LocalDateTime updated_at;*/
 }
