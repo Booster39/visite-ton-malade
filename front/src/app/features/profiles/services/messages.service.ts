@@ -10,7 +10,7 @@ import { environment } from '../../../../environments/environment.prod';
 })
 export class MessagesService {
 
-  private pathService =  `${environment.baseUrl}/api/messages`;
+  private pathService =  `${environment.baseUrl}messages`;
 
   constructor(private httpClient: HttpClient) { }
 
