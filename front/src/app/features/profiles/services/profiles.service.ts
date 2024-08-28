@@ -4,15 +4,15 @@ import { Observable } from 'rxjs';
 import { Profile } from 'src/app/features/profiles/interfaces/profile.interface';
 import { ProfileResponse } from '../interfaces/api/profileResponse.interface';
 import { ProfilesResponse } from '../interfaces/api/profilesResponse.interface';
-import { environment } from '../../../../environments/environment.prod'; 
+import { environment as prodenvir} from '../../../../environments/environment.prod'; 
+import { environment as envir} from '../../../../environments/environment'; 
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProfilesService {
-
-  private pathService = `${environment.baseUrl}profiles`;
+  private pathService = prodenvir.production ? `${prodenvir.baseUrl}profiles`: `${envir.baseUrl}profiles`;
 
   constructor(private httpClient: HttpClient) { }
 

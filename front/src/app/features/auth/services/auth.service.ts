@@ -5,14 +5,16 @@ import { LoginRequest } from '../interfaces/loginRequest.interface';
 import { AuthSuccess  } from '../interfaces/authSuccess.interface';
 import { RegisterRequest } from '../interfaces/registerRequest.interface';
 import { User } from 'src/app/interfaces/user.interface';
-import { environment } from 'src/environments/environment.prod';
+import { environment as prodenvir} from '../../../../environments/environment.prod'; 
+import { environment as envir} from '../../../../environments/environment'; 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private pathService =  `${environment.baseUrl}auth`;
+  private pathService = prodenvir.production ? `${prodenvir.baseUrl}auth`: `${envir.baseUrl}auth`;
+
 
   constructor(private httpClient: HttpClient) { }
 
