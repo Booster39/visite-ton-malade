@@ -1,4 +1,4 @@
 export const environment = {
-  baseUrl: "http://localhost:8080",
+  baseUrl: "https://visite-ton-malade-production.up.railway.app",
   production: true
 };
