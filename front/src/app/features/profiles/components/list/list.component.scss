@@ -1,3 +1,6 @@
+mat-card {
+    background-color: rgba(220, 220, 222, 0.178);
+}
 .list {
     margin: 20px;
 }
@@ -8,7 +11,7 @@
 
 .item {
     width: 100%; /* Ensures full width within the fxFlex */
-    height: 475px;
+    height: 375px;
 }
 .item mat-card-content {
     border-radius: 7px;
@@ -16,7 +19,7 @@
 }
 .fit {
     margin: 0;
-    height: 320px;
+    height: 200px;
     border-radius: 7px;
 }
 
@@ -27,4 +30,10 @@ mat-card-actions {
 
 mat-card-title {
     padding-bottom: 20px;
+}
+
+.description {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
