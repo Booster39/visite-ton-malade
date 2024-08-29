@@ -1,4 +1,4 @@
-<div class="detail">
+<div class="detail" fxLayout="row" fxLayoutAlign="center center">
     <mat-card *ngIf="profile">
         <mat-card-title>
             <div fxLayout="row" fxLayoutAlign="space-between center">
@@ -8,57 +8,57 @@
                     </button>
                 </div>
             </div>
-            <mat-card-subtitle class="owner">
-                <!--<app-owner-info [ownerId]="profile.owner_id"></app-owner-info>-->
-            </mat-card-subtitle>
+            
         </mat-card-title>
         <mat-card-content>
             <div fxLayout="column" fxLayoutAlign="start center">
-                <h1 class="profilename">{{profile.name | titlecase}}</h1>
+                <div class="profilebar" fxLayout="column" fxLayoutAlign="center center">
                 <img class="fit" [src]="profile.picture" alt="house picture">
+                <h1 class="profilename">{{profile.name | titlecase}}</h1>
             </div>
-            <div class="my2" fxLayout="row" fxLayoutAlign="center center">
-                <div class="room" fxLayout="column" fxLayoutAlign="center center"> 
-                    <span class="ml1">AGE : {{ (profile.age + " ans").toUpperCase()}} </span>
+                <div class="my2" fxLayout="row" fxLayoutAlign="center center">
+                    <div class="room" fxLayout="column" fxLayoutAlign="center center"> 
+                        <span class="ml1">AGE : {{ (profile.age + " ans").toUpperCase()}} </span>
+                    </div>
+                    <div class="room" fxLayout="row" fxLayoutAlign="center center"> 
+                        <mat-icon matPrefix>room</mat-icon>
+                        <span >VILLE : {{ profile.city.toUpperCase() }}</span>
+                    </div>
                 </div>
-                
-                <div class="room" fxLayout="column" fxLayoutAlign="center center"> 
-                    <mat-icon matPrefix>room</mat-icon>
-                    <span >VILLE : {{ profile.city.toUpperCase() }}</span>
-                </div>
-                
-            
             </div>
-            <div class="description" fxLayout="column"  fxLayoutAlign="center center">
-                <p>Description :
-                {{ profile.description }}</p>
+            <h3 class="title" fxLayout="row" fxLayoutAlign="start">Description:</h3>
+
+            <div  class="descriptionbar" fxLayout="column"  fxLayoutAlign="center center">
+            <div class="description" fxLayout="row"  fxLayoutAlign="center center">
+                
+                <p>
+                    {{ profile.description }}
+                </p>
             </div>
-            <div class="date" class="my2" fxLayout="column" fxLayoutAlign="center center">
-                <div class="created"><i>Create at: </i> {{ profile.created_at| date: 'longDate'}}</div>
-                <div class="updated"><i>Last update: </i> {{ profile.updated_at| date: 'longDate'}}</div>
+            </div>
+            <div class="date" class="my2" fxLayout="row" fxLayoutAlign="space-around center">
+                <div class="created" fxLayout="column" fxLayoutAlign="center center"><i>Inscrit depuis le: </i> {{ profile.created_at| date: 'longDate'}}</div>
+                <div class="updated" fxLayout="column" fxLayoutAlign="center center"><i>Mis à jour le: </i> {{ profile.updated_at| date: 'longDate'}}</div>
             </div>
         </mat-card-content>
     </mat-card>
 
     <mat-card class="mt2">
         <mat-card-title>
-            <h2>Contact the owner</h2>
+            <h2>Ecrire un message</h2>
         </mat-card-title>
-        <mat-card-content>
-
-            
-
+        <mat-card-content >
             <form [formGroup]="messageForm" (ngSubmit)="sendMessage()" fxLayout="column">
-                <mat-form-field appearance="outline" fxFlex>
+                <mat-form-field  appearance="fill" fxFlex>
                     <mat-label>Description</mat-label>
                     <mat-icon matSuffix>message</mat-icon>
-                    <textarea matInput placeholder="Message for the owner" rows="6" formControlName="message"></textarea>
-                    <div fxLayout="row" fxLayoutAlign="end center" class="mt2">
-                        <button mat-raised-button color="primary" type="submit"
-                            [disabled]="messageForm.invalid">Send</button>
-                    </div>
+                    <textarea matInput placeholder="Ecrire un message" rows="23" formControlName="message"></textarea>
                 </mat-form-field>
             </form>
+            <div fxLayout="row" fxLayoutAlign="end center" class="mt2">
+                <button mat-raised-button color="primary" type="submit"
+                    [disabled]="messageForm.invalid">Envoyer</button>
+            </div>
         </mat-card-content>
     </mat-card>
 </div>
