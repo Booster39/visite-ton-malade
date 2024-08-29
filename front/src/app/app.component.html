@@ -1,14 +1,16 @@
 <div class="app">
-  <!--color="#3CB371"-->
   <mat-toolbar class="color" fxLayout="row" fxLayoutAlign="space-between center">
     <span>Visit the sick</span>
-    <div *ngIf="$isLogged() | async; else notLogged">
+    <div *ngIf="isLoading" class="loader-overlay">
+      <mat-spinner></mat-spinner>
+    </div>
+    <div *ngIf="!showConnexionButtons(); else notLogged">
       <span routerLink="visit" class="link">Visit</span>
       <span routerLink="me" class="link">Account</span>
       <span (click)="logout()" class="link">Logout</span>
     </div>
     <ng-template #notLogged>
-      <div>
+      <div *ngIf="showConnexionButtons()">
         <span routerLink="login" class="link">Login</span>
         <span routerLink="register" class="link">Register</span>
       </div>

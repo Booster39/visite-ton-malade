@@ -17,26 +17,30 @@ export class AppComponent implements OnInit {
     private sessionService: SessionService) {
   }
 
+  public isLoading = true;
+
   public ngOnInit(): void {
     this.autoLog();
-  }
-
-  public $isLogged(): Observable<boolean> {
-    return this.sessionService.$isLogged();
   }
 
   public logout(): void {
     this.sessionService.logOut();
     this.router.navigate([''])
   }
+  public showConnexionButtons(): boolean {
+    return this.isLoading || (this.sessionService.isLogged && !this.router.url.includes('profiles'));
+  }
 
   public autoLog(): void {
+    this.isLoading = true;
     this.authService.me().subscribe(
       (user: User) => {
         this.sessionService.logIn(user);
+        this.isLoading = false;
       },
       (_) => {
         this.sessionService.logOut();
+        this.isLoading = false;
       }
     )
   }

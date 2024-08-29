@@ -13,13 +13,14 @@ import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { MeComponent } from './components/me/me.component';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { SessionService } from './services/session.service';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 const materialModule = [
   MatButtonModule,
   MatCardModule,
   MatIconModule,
   MatToolbarModule,
+  MatProgressSpinnerModule
 ]
 
 @NgModule({
